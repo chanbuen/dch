@@ -7,7 +7,10 @@ export default class Navbar extends Component {
 
   render(){
     return (
-      <div></div>
+      <ul>
+        <li>Login</li>
+        <li>Create Account</li>
+      </ul>
     )
   }
 }
