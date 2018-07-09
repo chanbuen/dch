@@ -7,7 +7,7 @@ const path = require('path')
 app.use(morgan('dev'))
 app.use(express.static(path.join(__dirname, '../public')))
 
-app.use('/channels', require('./channels'))
+app.use('/api/channels', require('./channels'))
 
 app.use(function (req, res, next) {
   const err = new Error('Not found.');

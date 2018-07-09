@@ -1,6 +1,7 @@
 const router = require('express').Router()
 const Channel = require('../db/models/channel')
 
+//GET api/channels
 router.get('/', (req, res, next) => {
   Channel.findAll()
     .then(channels => {
