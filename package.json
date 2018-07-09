@@ -4,7 +4,8 @@
   "description": "mobile app",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "nodemon index.js & run build",
+    "build": "webpack -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -13,8 +14,13 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "morgan": "^1.9.0",
+    "nodemon": "^1.17.5",
     "path": "^0.12.7",
     "react": "^16.4.0",
     "react-dom": "^16.4.0"
+  },
+  "devDependencies": {
+    "babel-loader": "^7.1.4",
+    "webpack": "^4.11.1"
   }
 }
