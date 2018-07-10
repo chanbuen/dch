@@ -1,5 +1,5 @@
-const app = require('./server/api')
-const PORT = 3000
+const app = require('./server')
+const PORT = 8080
 
 app.listen(PORT, () => {
   console.log(`Now listening on local host ${PORT}`)
