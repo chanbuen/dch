@@ -4,14 +4,16 @@
   "description": "mobile app",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js & run build",
+    "start": "nodemon server/index.js",
     "build": "webpack -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.18.0",
     "babel-core": "^6.26.3",
+    "babel-preset-react": "^6.24.1",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "morgan": "^1.9.0",
@@ -20,6 +22,8 @@
     "pg": "^7.4.3",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
     "redux": "^4.0.0",
     "redux-devtools-extension": "^2.13.5",
     "redux-logger": "^3.0.6",
@@ -28,6 +32,7 @@
   },
   "devDependencies": {
     "babel-loader": "^7.1.4",
-    "webpack": "^4.11.1"
+    "webpack": "^4.11.1",
+    "webpack-cli": "^3.1.0"
   }
 }
