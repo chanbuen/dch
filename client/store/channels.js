@@ -20,13 +20,14 @@ export const getChannels = channels => {
 
 //REDUCER
 
-export default reducer = (state = initialState, action) => {
+const channelReducer = (state = initialState, action) => {
+  let newState = Object.assign({}, state)
   switch(action.type){
     case GET_CHANNELS:
-      return {
-        ... state, channels : action.channels
-      }
+      return { newState, channels : action.channels }
     default:
       return state
-  }
+  } 
 }
+
+export default channelReducer

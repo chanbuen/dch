@@ -1,20 +1,21 @@
 const path = require('path')
 
 module.exports = {
-  entry: ['./client/index.js'],
+  entry: './client/index.js',
+  mode: 'development',
   output: {
+    path: path.join(__dirname, './public'),
     filename: './bundle.js',
-    path: path.join(__dirname, './public')
   },
   devtool: 'source-map',
   module: {
-    loaders: [
+    rules: [
       {
       test: /\.js$/,
       loader: 'babel-loader',
-      query: {
-          presets: ['es2015']
-        }
+      // query: {
+      //     presets: ['es2015']
+      //   }
       }
     ]
   }
