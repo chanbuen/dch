@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Navbar from './Navbar'
+import Channels from './Channels'
 
 export default class Main extends Component {
   constructor() {
@@ -9,9 +10,10 @@ export default class Main extends Component {
     }
   }
   render() {
-    if (!this.state.initialRequestHasCompleted) return (null);
+    // if (!this.state.initialRequestHasCompleted) return (null);
     return (
-      <Navbar />
+      // <Navbar />
+      <Channels />
     )
   }
 }
