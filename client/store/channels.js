@@ -17,14 +17,19 @@ export const getChannels = channels => {
 
 //THUNK CREATORS
 
+export const fetchChannels = () => 
+  dispatch => 
+    axios.get('api/channels')
+      .then(res => res.data)
+      .then(channelNames => dispatch(getChannels(channelNames)))
+      .catch(err => console.error(`Unable to retrieve channel names. ${err}`))
 
 //REDUCER
 
 const channelReducer = (state = initialState, action) => {
-  let newState = Object.assign({}, state)
   switch(action.type){
     case GET_CHANNELS:
-      return { newState, channels : action.channels }
+      return action.channels
     default:
       return state
   } 

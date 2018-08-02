@@ -1,21 +1,44 @@
 import React, { Component } from 'react' 
+import { fetchChannels } from '../store/channels'
+import { connect } from 'react-redux'
 
-export default class Channels extends Component {
+class Channels extends Component {
   constructor(props){
-    this.state = {
+    super(props)
+    // this.state = {
 
-    }
+    // }
   }
   
   componentDidMount(){
-    axios.get('api/channels')
-    //need to finish 
-      // .then(channels => )
+    this.props.retrieveChannels()
+    
   }
 
   render(){
     return(
-      <div></div>
+      <div>{
+        this.props.channels.map(channel => {
+        return (
+          <div key={channel.id}>{channel.name}</div>
+        )
+      })
+      }</div>
     )
   }
 }
+
+const mapState = (state, ownProps) => {
+  return {
+    channels : state.channels
+  }
+}
+const mapDispatch = dispatch => {
+  return {
+    retrieveChannels() {
+      dispatch(fetchChannels())
+    }
+  }
+}
+
+export default connect(mapState, mapDispatch)(Channels)

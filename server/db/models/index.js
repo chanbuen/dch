@@ -1,5 +1,5 @@
-// const channel = require('./channel')
+const channel = require('./channel')
 
-// module.exports = {
-//   channel
-// }
+module.exports = {
+  channel
+}
