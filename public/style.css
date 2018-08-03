@@ -4,3 +4,38 @@ body {
   /* font-family: 'Metrophobic', sans-serif; */
   background-color: #f9f9f9;
 }
+
+/********************* CHANNELS *********************/
+.channels-parent {
+  max-width: 30%;
+  -webkit-box-shadow: 0 5px 10px #777;
+  -moz-box-shadow: 0 5px 10px #777;
+  box-shadow: 0 5px 10px #777;
+  height: 70%;
+}
+
+.channels-sub-parent {
+  display: inline;
+}
+
+.channels-child {
+  display: flex;
+  margin-top: 5%;
+}
+
+.channels-name {
+  flex-wrap: wrap;
+  font-size: 14px;
+  max-width: 70%;
+  width: 70%;
+}
+
+.channels-count {
+  /* display: flex;
+  flex-wrap: wrap; */
+  text-align: center;
+  font-size: 12px;
+  border-radius: 10px/30px;
+  background: #BADA55;
+  width: 8%;
+}

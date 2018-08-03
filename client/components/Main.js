@@ -12,8 +12,10 @@ export default class Main extends Component {
   render() {
     // if (!this.state.initialRequestHasCompleted) return (null);
     return (
-      // <Navbar />
-      <Channels />
+      <div>
+        <Navbar />
+        <Channels />
+      </div>
     )
   }
 }

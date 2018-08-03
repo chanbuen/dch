@@ -17,13 +17,20 @@ class Channels extends Component {
 
   render(){
     return(
-      <div>{
-        this.props.channels.map(channel => {
-        return (
-          <div key={channel.id}>{channel.name}</div>
-        )
-      })
-      }</div>
+      <div className="channels-parent">
+        <div className="channels-sub-parent">
+        {
+          this.props.channels.map(channel => {
+          return (
+            <div key={channel.id} className="channels-child">
+              <div className="channels-name">{channel.name}</div>
+              <div className="channels-count">5</div>
+            </div>
+          )
+        })
+        }
+        </div>
+      </div>
     )
   }
 }
