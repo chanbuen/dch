@@ -1,30 +1,22 @@
-import React, { Component } from 'react' 
-import { fetchChannels } from '../store/channels'
-import { connect } from 'react-redux'
+import React from 'react' 
 
-class Channels extends Component {
-  constructor(props){
-    super(props)
-    // this.state = {
+export default function Channels ({ channels, messages }) {
 
-    // }
-  }
-  
-  componentDidMount(){
-    this.props.retrieveChannels()
-    
-  }
-
-  render(){
     return(
       <div className="channels-parent">
         <div className="channels-sub-parent">
         {
-          this.props.channels.map(channel => {
+          channels.map(channel => {
           return (
-            <div key={channel.id} className="channels-child">
+            <div key={channel.id} className="channels-child" onClick={}>
               <div className="channels-name">{channel.name}</div>
-              <div className="channels-count">5</div>
+              <div className="channels-count">
+                {/* {
+                  messages.reduce(message => {
+                    message.channelId === channel.id ? prev+1 : 0
+                  }, 0)
+                } */}
+              </div>
             </div>
           )
         })
@@ -32,20 +24,6 @@ class Channels extends Component {
         </div>
       </div>
     )
-  }
 }
 
-const mapState = (state, ownProps) => {
-  return {
-    channels : state.channels
-  }
-}
-const mapDispatch = dispatch => {
-  return {
-    retrieveChannels() {
-      dispatch(fetchChannels())
-    }
-  }
-}
 
-export default connect(mapState, mapDispatch)(Channels)
